@@ -22,7 +22,7 @@ interface Scene {
 const SCENES: Record<SceneId, Scene> = {
   intro: {
     id: 'intro',
-    text: "あなたは「豚の国」の外交官として、いじっぱりでプライドが高いことで有名なシャルロット王女の元を訪れました。彼女を攻略し、その心を開くことができるでしょうか？",
+    text: "あなたは「豚の国」の外交官として、いじっぱりでプライドが高いことで有名なシャルロット王女の元を訪れました。彼女は情熱的なダンサーとしても知られており、その動きは非常にダイナミックです。彼女の心を開くことができるでしょうか？",
     characterExpression: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?auto=format&fit=crop&q=80&w=1000", // 王女らしいポートレート
     choices: [
       { text: "謁見の間へ進む", nextScene: 'meeting', points: 0 }
@@ -92,7 +92,7 @@ export default function App() {
           contents: {
             parts: [
               {
-                text: 'Create a 2D anime-style illustration of a princess that captures the realistic facial features of a woman with a round face, a wide and cheerful smile showing her teeth, and slightly plump cheeks. She has black hair tied back with some loose strands. She is wearing a professional black suit over a white collared shirt. Her expression should be stubborn and proud, yet maintain the charming likeness of the original person. Avoid over-beautifying; focus on a realistic anime style that reflects her unique facial structure and personality. "Princess of the Pig Kingdom" theme.',
+                text: 'Create a 2D anime-style illustration of a plus-size, full-figured princess with a round face and a wide, cheerful smile showing her teeth. She has messy, curly black hair with loose strands. She is wearing a professional black suit over a white shirt, but her pose is dynamic and energetic, like a dancer in mid-motion. Her expression is stubborn and proud, capturing the unique and charming likeness of the original person. "Princess of the Pig Kingdom" theme. Anime art style, vibrant colors.',
               },
             ],
           },
