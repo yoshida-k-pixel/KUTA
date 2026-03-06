@@ -82,11 +82,16 @@ export default function App() {
 
   useEffect(() => {
     const generateCharacter = async () => {
+      // Check if we already have a saved image in localStorage
+      const savedImage = localStorage.getItem('princess_character_image');
+      if (savedImage) {
+        setCharacterImage(savedImage);
+        setIsGenerating(false);
+        return;
+      }
+
       try {
         const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
-        // The user's image is provided in the prompt context, but for the app to work 
-        // we'll use a prompt that describes the character based on the user's request.
-        // In a real scenario, we might pass the original image as base64 if we had it stored.
         const response = await ai.models.generateContent({
           model: 'gemini-2.5-flash-image',
           contents: {
@@ -100,13 +105,15 @@ export default function App() {
 
         for (const part of response.candidates?.[0]?.content?.parts || []) {
           if (part.inlineData) {
-            setCharacterImage(`data:image/png;base64,${part.inlineData.data}`);
+            const base64Image = `data:image/png;base64,${part.inlineData.data}`;
+            setCharacterImage(base64Image);
+            // Save to localStorage for persistence
+            localStorage.setItem('princess_character_image', base64Image);
             break;
           }
         }
       } catch (error) {
         console.error("Error generating character image:", error);
-        // Fallback to a relevant placeholder if generation fails
         setCharacterImage("https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?auto=format&fit=crop&q=80&w=1000");
       } finally {
         setIsGenerating(false);
