@@ -2,47 +2,19 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Cormorant Garamond", serif;
 }
 
 :root {
-  --bg: #E4E3E0;
-  --ink: #141414;
-  --line: #141414;
+  --bg: #fdfaf6;
+  --ink: #2d2d2d;
 }
 
 body {
   background-color: var(--bg);
   color: var(--ink);
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
+  margin: 0;
 }
 
-.data-row {
-  display: grid;
-  grid-template-columns: 2fr 3fr 2fr 3fr;
-  padding: 1rem;
-  border-bottom: 1px solid var(--line);
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.data-row:hover {
-  background: var(--ink);
-  color: var(--bg);
-}
-
-.col-header {
-  font-family: 'Georgia', serif;
-  font-style: italic;
-  font-size: 11px;
-  opacity: 0.5;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-bottom: 2px solid var(--line);
-  padding-bottom: 0.5rem;
-}
-
-.data-value {
-  font-family: var(--font-mono);
-  letter-spacing: -0.02em;
-  font-size: 13px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
