@@ -1,0 +1,5 @@
+{
+  "name": "SloRepo Analyzer",
+  "description": "Analyze pachislot store trends and high-setting machine characteristics based on SloRepo data.",
+  "requestFramePermissions": []
+}
